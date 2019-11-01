@@ -1,6 +1,6 @@
 # Laravel WebSockets Demo 🛰
 
-This is a demo application built with the [Laravel WebSockets](https://github.com/beyondcode/laravel-websockets) package.
+A chat application using websocket bbaked with Laravel and the [Laravel WebSockets](https://github.com/beyondcode/laravel-websockets) package.
 
 Be sure to check out the [official documentation](https://docs.beyondco.de/laravel-websockets/).
 
@@ -20,4 +20,4 @@ Be sure to check out the [official documentation](https://docs.beyondco.de/larav
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.

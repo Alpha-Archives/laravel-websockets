@@ -1,9 +1,10 @@
 {
-    "name": "laravel/laravel",
+    "name": "alphao/laravel-websocket",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "A realtime chat application using websockets.",
     "keywords": [
-        "framework",
+        "chat",
+        "realtime",
         "laravel"
     ],
     "license": "MIT",
