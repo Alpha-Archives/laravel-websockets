@@ -34,6 +34,6 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/com/alphaolomi/laravel-websockets?logo=travis&style=flat-square
 [ico-codecov]: https://img.shields.io/codecov/c/github/alphaolomi/laravel-websockets?logo=codecov&style=flat-square
 [link-travis]: https://travis-ci.com/alphaolomi/laravel-websockets
-[link-codecov]: https://scrutinizer-ci.com/g/alphaolomi/laravel-websockets/code-structure
+[link-codecov]: https://codecov.io/gh/alphaolomi/laravel-websockets
 [link-author]: https://github.com/alphaolomi
 [link-contributors]: ../../contributors

@@ -6,15 +6,25 @@ php:
 
 sudo: false
 
+services:
+  - mysql
+
 cache:
   directories:
     - $HOME/.composer/cache
 
+install:
+  - cp .env.testing .env
+  - composer install --no-interaction --prefer-dist --no-suggest
+
 before_script:
-  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
+  - mysql -e 'create database testing;'
+  # - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
 
 script:
-  - vendor/bin/phpcs --standard=psr2 src/
+  - php artisan key:generate
+  - php artisan migrate
+  - php artisan db:seed
   - vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:
