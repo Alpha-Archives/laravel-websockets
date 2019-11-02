@@ -1,7 +1,8 @@
-# LaraChat v2.0 [![Software License][ico-license]](LICENSE.md) [![Build Status][ico-travis]][link-travis] [![Coverage Status][ico-codecov]][link-codecov]
+# LaraChat v1.0 [![Software License][ico-license]](LICENSE.md) [![Build Status][ico-travis]][link-travis] [![Coverage Status][ico-codecov]][link-codecov]
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+A cool chat applicatin using websocket
+
+![img](./docs/screenshot.jpg)
 
 ## Change log
 
