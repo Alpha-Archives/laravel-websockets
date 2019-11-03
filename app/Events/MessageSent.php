@@ -2,15 +2,14 @@
 
 namespace App\Events;
 
-use App\User;
 use App\Message;
+use App\User;
 use Illuminate\Broadcasting\Channel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class MessageSent implements ShouldBroadcast
 {
@@ -19,21 +18,22 @@ class MessageSent implements ShouldBroadcast
     /**
      * User that sent the message
      *
-     * @var \App\User
+     * @var User
      */
     public $user;
 
     /**
      * Message details
      *
-     * @var \App\Message
+     * @var Message
      */
     public $message;
 
     /**
      * Create a new event instance.
      *
-     * @return void
+     * @param User $user
+     * @param Message $message
      */
     public function __construct(User $user, Message $message)
     {
