@@ -1878,25 +1878,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['user'],
+  props: ["user"],
   data: function data() {
     return {
-      newMessage: ''
+      newMessage: ""
     };
   },
   methods: {
     sendTypingEvent: function sendTypingEvent() {
-      Echo.join('chat').whisper('typing', this.user);
+      Echo.join("chat").whisper("typing", this.user);
     },
     sendMessage: function sendMessage() {
-      this.$emit('messagesent', {
+      this.$emit("messagesent", {
         user: this.user,
         message: this.newMessage
       });
-      this.newMessage = '';
+      this.newMessage = "";
     }
   }
 });
@@ -1928,9 +1926,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['messages']
+  props: ["messages"],
+  methods: {
+    scrollToEnd: function scrollToEnd() {
+      var container = this.$el.querySelector("#container");
+      container.scrollTop = container.scrollHeight;
+    }
+  },
+  created: function created() {
+    this.scrollToEnd();
+  }
 });
 
 /***/ }),
@@ -46838,7 +46844,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "input-group" }, [
+  return _c("div", { staticClass: "input-group wrap mb-2" }, [
     _c("input", {
       directives: [
         {
@@ -46848,13 +46854,8 @@ var render = function() {
           expression: "newMessage"
         }
       ],
-      staticClass: "form-control input-sm",
-      attrs: {
-        id: "btn-input",
-        type: "text",
-        name: "message",
-        placeholder: "Type your message here..."
-      },
+      staticClass: "ml-2 rounded",
+      attrs: { type: "text", placeholder: "Write your message..." },
       domProps: { value: _vm.newMessage },
       on: {
         keyup: [
@@ -46878,15 +46879,20 @@ var render = function() {
       }
     }),
     _vm._v(" "),
-    _c("span", { staticClass: "input-group-btn" }, [
+    _c("div", { staticClass: "input-group-append" }, [
       _c(
         "button",
         {
-          staticClass: "btn btn-primary btn-sm",
+          staticClass: "rounded m-1 submit",
           attrs: { id: "btn-chat" },
           on: { click: _vm.sendMessage }
         },
-        [_vm._v("\n            Send\n        ")]
+        [
+          _c("i", {
+            staticClass: "fa fa-paper-plane",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]
       )
     ])
   ])
@@ -46913,32 +46919,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "ul",
-    { staticClass: "chat" },
-    _vm._l(_vm.messages, function(message) {
-      return _c("li", { staticClass: "left clearfix" }, [
-        _c("div", { staticClass: "chat-body clearfix" }, [
-          _c("div", { staticClass: "header" }, [
-            _c("strong", { staticClass: "primary-font" }, [
-              _vm._v(
-                "\n                    " +
-                  _vm._s(message.user.name) +
-                  "\n                "
-              )
-            ])
-          ]),
+  return _c("div", { attrs: { id: "container" } }, [
+    _c(
+      "ul",
+      _vm._l(_vm.messages, function(message) {
+        return _c("li", { key: message.id, staticClass: "replies" }, [
+          _c("img", { attrs: { src: "imgs/avatar.jpg", alt: "" } }),
           _vm._v(" "),
           _c("p", [
-            _vm._v(
-              "\n                " + _vm._s(message.message) + "\n            "
-            )
+            _vm._v("\n        " + _vm._s(message.user.name) + "\n        "),
+            _c("br"),
+            _vm._v("\n        " + _vm._s(message.message) + "\n      ")
           ])
         ])
-      ])
-    }),
-    0
-  )
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -59152,7 +59149,7 @@ files.keys().map(function (key) {
  */
 
 var app = new Vue({
-  el: '#app',
+  el: '#frame',
   data: {
     messages: [],
     users: []
