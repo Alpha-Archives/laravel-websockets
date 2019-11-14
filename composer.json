@@ -17,7 +17,7 @@
     },
     "require-dev": {
         "facade/ignition": "1.11.2",
-        "fzaninotto/faker": "1.8.0",
+        "fzaninotto/faker": "1.9.0",
         "laravel/ui": "1.1.1",
         "mockery/mockery": "1.2.4",
         "nunomaduro/collision": "3.0.1",
