@@ -16,7 +16,7 @@
         "laravel/tinker": "1.0.10"
     },
     "require-dev": {
-        "facade/ignition": "1.11.2",
+        "facade/ignition": "1.12.0",
         "fzaninotto/faker": "1.9.0",
         "laravel/ui": "1.1.1",
         "mockery/mockery": "1.2.4",
