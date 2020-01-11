@@ -24,7 +24,7 @@ before_script:
 script:
   - php artisan key:generate
   - php artisan migrate
-  - php artisan db:seed
+  # - php artisan db:seed
   - vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:
