@@ -1,6 +1,6 @@
 # LaraChat v1.0 [![Software License][ico-license]](LICENSE.md) [![Build Status][ico-travis]][link-travis] [![Coverage Status][ico-codecov]][link-codecov]
 
-A cool chat applicatin using websocket
+A cool chat application using websocket
 
 ![img](./docs/screenshot.jpg)
 
