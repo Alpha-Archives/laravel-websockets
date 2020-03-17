@@ -2,9 +2,7 @@ dist: trusty
 language: php
 
 php:
-  - 7.2
-
-sudo: false
+  - 7.3
 
 services:
   - mysql
@@ -19,7 +17,6 @@ install:
 
 before_script:
   - mysql -e 'create database testing;'
-  # - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
 
 script:
   - php artisan key:generate
