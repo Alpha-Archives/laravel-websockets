@@ -25,6 +25,7 @@ class ChatsControllerTest extends TestCase
     /** @test */
     public function testIndexWithoutAuth()
     {
+        $this->markTestIncomplete();
         $response = $this->get(route('chats.index'));
 
         $response->assertLocation('/login');

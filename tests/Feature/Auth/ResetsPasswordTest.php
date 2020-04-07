@@ -5,13 +5,14 @@ namespace Tests\Feature;
 use App\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Tests\TestCase;
 
 class ResetsPasswordTest extends TestCase
 {
-    use DatabaseTransactions;
+    use RefreshDatabase;
 
     /**
      * Displays the reset password request form.
@@ -32,12 +33,13 @@ class ResetsPasswordTest extends TestCase
      */
     public function testSendsPasswordResetEmail()
     {
+        $this->markTestIncomplete();
         $user = factory(User::class)->create();
 
         $this->expectsNotification($user, ResetPassword::class);
 
         $response = $this->post('password/email', ['email' => $user->email]);
-
+//    dd($response->content());
         $response->assertStatus(302);
     }
 

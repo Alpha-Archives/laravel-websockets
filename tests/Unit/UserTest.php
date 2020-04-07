@@ -3,10 +3,13 @@
 namespace Tests\Unit;
 
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\ModelTestCase;
 
 class UserTest extends ModelTestCase
 {
+
+    use RefreshDatabase;
     /** @test */
     public function testFillableAttribute()
     {
@@ -42,6 +45,7 @@ class UserTest extends ModelTestCase
 
         $user->messages()->save(factory(\App\Message::class)->make());
 
+        $this->assertTrue(true);
         $this->assertHasManyUsing(\App\Message::class, $user->messages(), 'user_id');
     }
 
