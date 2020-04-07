@@ -12,7 +12,7 @@ class MesagesTableSeeder extends Seeder
     public function run()
     {
         factory(App\User::class, 2)->create()->each(function ($u) {
-            $u->messages()->save(factory(App\Message::class,3)->make());
+            $u->messages()->insert(factory(App\Message::class,3)->make()->toArray());
         });
     }
 }

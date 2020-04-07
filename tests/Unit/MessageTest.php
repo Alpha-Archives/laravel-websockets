@@ -4,10 +4,12 @@ namespace Tests\Unit;
 
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\ModelTestCase;
 
 class MessageTest extends ModelTestCase
 {
+    use RefreshDatabase;
     /** @test */
     public function testFillableAttribute()
     {
