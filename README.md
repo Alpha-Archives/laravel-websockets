@@ -1,40 +1,69 @@
-# LaraChat v1.0 [![Software License][ico-license]](LICENSE.md) [![Build Status][ico-travis]][link-travis] [![Coverage Status][ico-codecov]][link-codecov]
+<h1 align="center">LaraChat 👋</h1>
+<p align="center">
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.2+1-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a target="_blank" href="https://travis-ci.com/github/alphaolomi/laravel-websockets">
+    <img src="https://travis-ci.com/alphaolomi/laravel-websockets.svg?branch=master" /></a>
+  <a target="_blank" href="https://codecov.io/gh/alphaolomi/laravel-websockets">
+  <img src="https://codecov.io/gh/alphaolomi/laravel-websockets/branch/master/graph/badge.svg" /></a>
+</p>
 
-A cool chat application using websocket
+<p align="center">
+A minimal chat application using Laravel-Websocket
+</p>
 
-![img](./docs/screenshot.jpg)
+## Links
 
-## Change log
+🏠 [Homepage](https://github.com/alphaolomi/laravel-websockets)
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Testing
+<!-- ![img](./docs/screenshot.jpg) -->
 
-```bash
-$ composer test
+## Development
+
+### Install
+
+```sh
+composer install
 ```
 
-## Contributing
+### Dev server
 
-Please see [CONTRIBUTING](./.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT](./.github/CODE_OF_CONDUCT.md) for details.
+```sh
+php artisan serve
+```
+
+### Run tests
+
+```sh
+composer test
+```
+
+## 👤 Author
+
+
+- **Alpha Olomi** - Website: https://alphaolomi.me Github: [@alphaolomi](https://github.com/alphaolomi)
+
+-   [All Contributors][link-contributors]
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/alphaolomi/laravel-websockets/issues).Please see [CONTRIBUTING](./.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT](./.github/CODE_OF_CONDUCT.md) for details.
+
 
 ## Security
 
-If you discover any security related issues, please email hello@alphaolomi.com instead of using the issue tracker.
+If you discover any security related issues, please email [alphaolomi@gmail.com](mailto:alphaolomi@gmail.com) instead of using the issue tracker.
 
-## Credits
+## Show your support
 
--   [Alpha Olomi][link-author]
--   [All Contributors][link-contributors]
+Give a ⭐️ if this project helped you!
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/com/alphaolomi/laravel-websockets?logo=travis&style=flat-square
-[ico-codecov]: https://img.shields.io/codecov/c/gh/alphaolomi/laravel-websockets?logo=codecov&style=flat-square
-[link-travis]: https://travis-ci.com/alphaolomi/laravel-websockets
-[link-codecov]: https://codecov.io/gh/alphaolomi/laravel-websockets
-[link-author]: https://github.com/alphaolomi
+
 [link-contributors]: ../../contributors
