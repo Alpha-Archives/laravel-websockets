@@ -1,12 +1,8 @@
 {
     "name": "alphao/laravel-websocket",
     "type": "project",
-    "description": "A realtime chat application using websockets.",
-    "keywords": [
-        "chat",
-        "realtime",
-        "laravel"
-    ],
+    "description": "A Admin dashboard with realtime chat application feature  using websockets.",
+
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
@@ -22,7 +18,7 @@
         "fzaninotto/faker": "^1.9.1",
         "mockery/mockery": "^1.3.1",
         "nunomaduro/collision": "^4.1",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^8.5"
     },
     "config": {
         "optimize-autoloader": true,

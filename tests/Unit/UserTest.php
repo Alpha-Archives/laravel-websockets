@@ -10,6 +10,7 @@ class UserTest extends ModelTestCase
 {
 
     use RefreshDatabase;
+    
     /** @test */
     public function testFillableAttribute()
     {

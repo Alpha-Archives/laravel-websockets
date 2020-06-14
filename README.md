@@ -1,4 +1,4 @@
-<h1 align="center">LaraChat 👋</h1>
+<h1 align="center">Laravel App with Realtime Notification 👋</h1>
 <p align="center">
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.2+1-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -11,14 +11,14 @@
 </p>
 
 <p align="center">
-A minimal chat application using Laravel-Websocket
+A minimal application with Laravel-Websocket
 </p>
 
 ## Links
 
 🏠 [Homepage](https://github.com/alphaolomi/laravel-websockets)
 
-
+<!-- todo add screenshots -->
 <!-- ![img](./docs/screenshot.jpg) -->
 
 ## Development
@@ -46,7 +46,6 @@ composer test
 
 - **Alpha Olomi** - Website: https://alphaolomi.me Github: [@alphaolomi](https://github.com/alphaolomi)
 
--   [All Contributors][link-contributors]
 
 ## 🤝 Contributing
 
