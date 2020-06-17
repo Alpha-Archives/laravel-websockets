@@ -76,5 +76,24 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+<script>
+
+
+const pusher = new Pusher('websocket', {
+    // cluster: 'mt1'// ,APP_CLUSTER,
+    wsHost: window.location.hostname,
+    wsPort: 6001,
+    forceTLS:false,
+    enableStats:true,
+    // authEndpoint: 'http://example.com/pusher/auth',
+  });
+
+  var channel = pusher.subscribe('notification');
+
+
+</script>
+
 </body>
 </html>
