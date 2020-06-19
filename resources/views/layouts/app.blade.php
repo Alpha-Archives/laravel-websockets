@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -77,7 +77,7 @@
         </main>
     </div>
 
-    <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+    {{-- <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
 <script>
 
 
@@ -85,15 +85,34 @@ const pusher = new Pusher('websocket', {
     // cluster: 'mt1'// ,APP_CLUSTER,
     wsHost: window.location.hostname,
     wsPort: 6001,
+    encrypted: true,
     forceTLS:false,
     enableStats:true,
     // authEndpoint: 'http://example.com/pusher/auth',
   });
+  Pusher.logToConsole=true;
 
-  var channel = pusher.subscribe('notification');
+
+  // Subscribe to the channel we specified in our Laravel Event
+var channel = pusher.subscribe('status-liked');
+pusher.allChannels().forEach(channel => console.log(channel.name));
+
+// Bind a function to a Event (the full Laravel class)
+channel.bind('App\\Events\\StatusLiked', function(data) {
+    // this is called when the event notification is received...
+    console.log(data.message);
+
+});
+//   var channel = pusher.subscribe('notification');
+//   channel.bind('new-message', function (data) {
+//   console.log(data.message);
+// });
 
 
-</script>
+// channel.bind_global(function (event, data) {
+//   console.log(`The event ${event} was triggered with data ${data}`);
+// })
+</script> --}}
 
 </body>
 </html>

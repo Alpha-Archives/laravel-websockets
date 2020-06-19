@@ -20,4 +20,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Echo.channel('status-liked')
+    // // OrderShipped
+    // //App\\Events\\StatusLiked
+    // .listen('OrderShipped', (e) => {
+    //     console.log(e.order.name);
+    // });
+
+    Echo.channel('status-liked')
+    .listen('OrderShipped', (e) => {
+        //
+        console.log(e);
+
+    });
+</script>
 @endsection

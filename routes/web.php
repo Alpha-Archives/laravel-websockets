@@ -15,3 +15,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('messages', 'ChatsController@fetchMessages')->name('chats.fetch');
     Route::post('messages', 'ChatsController@sendMessage')->name('chats.send');
 });
+
+
+
+Route::get('test', function () {
+    try {
+        event(new App\Events\StatusLiked('Someone'));
+        return "Event has been sent!";
+    } catch (\Throwable $th) {
+        dd($th);
+        return "error kama zote!";
+        // throw $th;
+    }
+
+});
