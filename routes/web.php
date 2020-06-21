@@ -29,3 +29,6 @@ Route::get('test', function () {
     }
 
 });
+
+
+Route::get('job','ReportController@generate')->name('reports.generate');
