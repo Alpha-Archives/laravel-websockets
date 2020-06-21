@@ -19,15 +19,16 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::get('test', function () {
-    try {
-        event(new App\Events\StatusLiked('Someone'));
+    // try {
+    //     event(new App\Events\StatusLiked('Someone'));
+    //     return "Event has been sent!";
+    // } catch (\Throwable $th) {
+    //     dd($th);
+    //     return "error kama zote!";
+    //     // throw $th;
+    // }
+    event(new App\Events\StatusLiked('Someone'));
         return "Event has been sent!";
-    } catch (\Throwable $th) {
-        dd($th);
-        return "error kama zote!";
-        // throw $th;
-    }
-
 });
 
 
