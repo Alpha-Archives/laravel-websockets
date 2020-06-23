@@ -1,4 +1,11 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
+
 
 @section('content')
 <div class="container">
@@ -21,19 +28,4 @@
     </div>
 </div>
 
-<script>
-    // Echo.channel('status-liked')
-    // // OrderShipped
-    // //App\\Events\\StatusLiked
-    // .listen('OrderShipped', (e) => {
-    //     console.log(e.order.name);
-    // });
-
-    // Echo.channel('status-liked')
-    // .listen('OrderShipped', (e) => {
-    //     //
-    //     console.log(e);
-
-    // });
-</script>
 @endsection

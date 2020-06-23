@@ -1,9 +1,13 @@
 try {
     window.Popper = require("popper.js").default;
     window.$ = window.jQuery = require("jquery");
+    require("overlayscrollbars");
+    require("../../vendor/almasaeed2010/adminlte/dist/js/adminlte");
 
     require("bootstrap");
-} catch (e) {}
+} catch (e) {
+    console.log(e);
+}
 
 import Echo from "laravel-echo";
 
@@ -24,10 +28,8 @@ window.Echo.channel("status-liked").listen("OrderShipped", event => {
     console.log(event.message);
 });
 
-
-
 // window.Echo.private(`App.User.${uid}`).notification(notification => {
-    window.Echo.private(`App.User.1`).notification(notification => {
+window.Echo.private(`App.User.1`).notification(notification => {
     // console.log(notification.type);
     console.log(notification.type);
 });
