@@ -24165,37 +24165,33 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var laravel_echo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
-// window._ = require('lodash');
 try {
   window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
-} catch (e) {} // window.axios = require('axios');
-// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+} catch (e) {}
 
 
+window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
+window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  broadcaster: "pusher",
+  key: "websocket",
+  encrypted: false,
+  forceTLS: false,
+  wsHost: window.location.hostname,
+  wsPort: 6001,
+  disableStats: false
+});
+window.Echo.channel("status-liked").listen("OrderShipped", function (event) {
+  console.log("dfasdfasdf");
+  console.log(event.message);
+}); // window.Echo.private(`App.User.${uid}`).notification(notification => {
 
-window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js"); // const client = require('pusher-js');
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-channels-key',
-//     client: client
-// });
-// window.Echo = new Echo({
-//     client: client,
-//     // broadcaster: 'pusher',
-//     //process.env.MIX_PUSHER_APP_KEY,
-//     key: 'websocket',
-//     wsHost: window.location.hostname,
-//     wsPort: 6001,
-// });
-// Echo.channel('status-liked')
-// // OrderShipped
-// //App\\Events\\StatusLiked
-// .listen('OrderShipped', (e) => {
-//     console.log(e.order.name);
-// });
+window.Echo["private"]("App.User.1").notification(function (notification) {
+  // console.log(notification.type);
+  console.log(notification.type);
+});
 
 /***/ }),
 

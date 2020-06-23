@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,17 +20,19 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::get('test', function () {
-    // try {
-    //     event(new App\Events\StatusLiked('Someone'));
-    //     return "Event has been sent!";
-    // } catch (\Throwable $th) {
-    //     dd($th);
-    //     return "error kama zote!";
-    //     // throw $th;
-    // }
     event(new App\Events\StatusLiked('Someone'));
-        return "Event has been sent!";
+    return "Event has been sent!";
 });
 
 
-Route::get('job','ReportController@generate')->name('reports.generate');
+Route::get('noti', function () {
+    $user = auth()->user();
+    $users  = User::all();
+    // $user->notify(new App\Notifications\InvoicePaid());
+    Notification::send($users, new App\Notifications\InvoicePaid());
+    return "Notified!";
+});
+
+
+
+Route::get('job', 'ReportController@generate')->name('reports.generate');

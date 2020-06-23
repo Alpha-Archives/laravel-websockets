@@ -10,9 +10,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -83,29 +80,11 @@
     </div>
 
 
-    <script>
-        const pusher = new Pusher('websocket', {
-
-    wsHost: window.location.hostname,
-    wsPort: 6001,
-    encrypted: true,
-    forceTLS:false,
-    enableStats:true,
-    // authEndpoint: 'http://example.com/pusher/auth',
-  });
-  Pusher.logToConsole=true;
-
-
-
-const channel = pusher.subscribe('status-liked');
-pusher.allChannels().forEach(channel => console.log(channel.name));
-
-channel.bind('App\\Events\\StatusLiked', function(data) {
-    console.log(data.message);
-});
-
-    </script>
-
 </body>
+<!-- Scripts -->
+<script type="text/javascript">
+    const uid = {{ auth()->user()->id }}
+</script>
+<script src="{{ mix('js/app.js') }}"></script>
 
 </html>
