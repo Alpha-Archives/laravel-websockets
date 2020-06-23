@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -87,4 +87,49 @@
 </script>
 <script src="{{ mix('js/app.js') }}"></script>
 
-</html>
+</html> --}}
+
+
+
+@extends('adminlte::page')
+
+@section('content_top_nav_right')
+<!-- Notifications Dropdown Menu -->
+<li class="nav-item dropdown">
+    <a class="nav-link" data-toggle="dropdown" href="#">
+      <i class="far fa-bell"></i>
+      <span id="notification_count" class="badge badge-warning navbar-badge">1</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+      <span class="dropdown-item dropdown-header">Notifications</span>
+
+      <div id="notifications">
+        {{-- <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">
+          <i class="fas fa-envelope mr-2"></i> 4 new messages
+          <span class="float-right text-muted text-sm">3 mins</span>
+        </a> --}}
+      </div>
+
+      <div class="dropdown-divider"></div>
+      <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+      <i class="fas fa-th-large"></i>
+    </a>
+  </li>
+@stop
+
+
+@section('css')
+<script>
+    @auth
+    let uid = {{ auth()->user()->id || 1 }};
+    let prevNotifications =  @json(auth()->user()->notifications)
+    @endauth
+</script>
+@endsection
+
+{{-- Notification --}}

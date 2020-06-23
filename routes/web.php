@@ -28,8 +28,8 @@ Route::get('test', function () {
 Route::get('noti', function () {
     $user = auth()->user();
     $users  = User::all();
-    // $user->notify(new App\Notifications\InvoicePaid());
-    Notification::send($users, new App\Notifications\InvoicePaid());
+    $user->notify(new App\Notifications\InvoicePaid());
+    // Notification::send($users, new App\Notifications\InvoicePaid());
     return "Notified!";
 });
 
