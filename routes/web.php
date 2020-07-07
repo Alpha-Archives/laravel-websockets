@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,4 +15,34 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('messages', 'ChatsController@fetchMessages')->name('chats.fetch');
     Route::post('messages', 'ChatsController@sendMessage')->name('chats.send');
+
+
+    Route::get('job', 'ReportController@generate')->name('reports.generate');
+
+
+
+
+    Route::get('test', function () {
+        event(new App\Events\StatusLiked('Someone'));
+        return "Event has been sent!";
+    });
+    
+    
+    Route::get('noti', function () {
+        $user = auth()->user();
+        $users  = User::all();
+        $user->notify(new App\Notifications\InvoicePaid());
+        // Notification::send($users, new App\Notifications\InvoicePaid());
+        return "Notified!";
+    });
+
+
+
 });
+
+
+
+
+
+
+

@@ -44,4 +44,21 @@ class User extends Authenticatable
     {
         return $this->hasMany(Message::class);
     }
+
+
+    // Profile
+    public function adminlte_image()
+    {
+        return 'https://picsum.photos/30/30';
+    }
+
+    public function adminlte_desc()
+    {
+        return 'That\'s a nice guy';
+    }
+
+    public function adminlte_profile_url()
+    {
+        return 'profile/username';
+    }
 }

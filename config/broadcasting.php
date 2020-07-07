@@ -41,7 +41,7 @@ return [
                 // laravel webscokets enabled
                 'encrypted' => false,
                 'host' => '127.0.0.1',
-                'port' => 6001,
+                'port' =>  6001,
                 'scheme' => 'http'
             ],
         ],
