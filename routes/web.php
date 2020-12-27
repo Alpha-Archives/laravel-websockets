@@ -1,48 +1,18 @@
 <?php
 
-use App\User;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
-Auth::routes();
-Route::group(['middleware' => 'auth'], function () {
-    Route::view('/', 'welcome');
-
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/chats', 'ChatsController@index')->name('chats.index');
-
-
-    Route::get('messages', 'ChatsController@fetchMessages')->name('chats.fetch');
-    Route::post('messages', 'ChatsController@sendMessage')->name('chats.send');
-
-
-    Route::get('job', 'ReportController@generate')->name('reports.generate');
-
-
-
-
-    Route::get('test', function () {
-        event(new App\Events\StatusLiked('Someone'));
-        return "Event has been sent!";
-    });
-    
-    
-    Route::get('noti', function () {
-        $user = auth()->user();
-        $users  = User::all();
-        $user->notify(new App\Notifications\InvoicePaid());
-        // Notification::send($users, new App\Notifications\InvoicePaid());
-        return "Notified!";
-    });
-
-
-
+Route::get('/', function () {
+    return view('welcome');
 });
-
-
-
-
-
-
-

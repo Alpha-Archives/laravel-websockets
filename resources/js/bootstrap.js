@@ -1,68 +1,28 @@
-try {
-    window.Popper = require("popper.js").default;
-    window.$ = window.jQuery = require("jquery");
-    require("overlayscrollbars");
-    require("../../vendor/almasaeed2010/adminlte/dist/js/adminlte");
+window._ = require('lodash');
 
-    require("bootstrap");
-} catch (e) {
-    console.log(e);
-}
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
 
-import Echo from "laravel-echo";
-import { forEach } from "lodash";
+window.axios = require('axios');
 
-window.Pusher = require("pusher-js");
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-Pusher.logToConsole = true;
-window.Echo = new Echo({
-    broadcaster: "pusher",
-    key: "websocket",
-    encrypted: false,
-    forceTLS: false,
-    wsHost: window.location.hostname,
-    wsPort: 6001,
-    disableStats: false
-});
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
 
-// listen for event
-window.Echo.channel("status-liked").listen("OrderShipped", event => {
-    console.log("dfasdfasdf");
-    console.log(event.message);
-});
+// import Echo from 'laravel-echo';
 
-let notificationCount = 0;
-let notificationsWrapper = $("#notifications");
-let notification_counter = $("#notification_count");
+// window.Pusher = require('pusher-js');
 
-prevNotifications.forEach(element => {
-    notificationCount++;
-    console.log(element);
-
-    notificationsWrapper.append(
-        `<div class="dropdown-divider"></div>
-<a href="#" class="dropdown-item">
-  <i class="fas fa-envelope mr-2"></i> ${element.data.message}
-  <span class="float-right text-muted text-sm">3 mins</span>
-</a>
-`
-    );
-
-    notification_counter.html(notificationCount);
-});
-
-// listen for notifications
-window.Echo.private(`App.User.${uid}`).notification(notification => {
-    // window.Echo.private(`App.User.1`).notification(notification => {
-    // console.log(notification.type);
-    // console.log(notification);
-    notificationCount++;
-    notificationsWrapper.append(
-        `<div class="dropdown-divider"></div>
-<a href="#" class="dropdown-item">
-  <i class="fas fa-envelope mr-2"></i> ${notification.message}
-  <span class="float-right text-muted text-sm">3 mins</span>
-</a>
-`
-    );
-});
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: process.env.MIX_PUSHER_APP_KEY,
+//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     forceTLS: true
+// });
