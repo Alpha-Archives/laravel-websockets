@@ -16,8 +16,8 @@ class MessageSentEventTest extends TestCase
     {
         Event::fake();
 
-        $m = factory(\App\Message::class)->make();
-        $user = factory(\App\User::class)->create();
+        $m = \App\Models\Message::factory()->make();
+        $user = \App\Models\User::factory()->create();
 
         $message = $user->messages()->create([
             'message' => $m->message

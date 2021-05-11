@@ -1,13 +1,29 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Message;
-use Faker\Generator as Faker;
+use App\Models\Message;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Message::class, function (Faker $faker) {
-    return [
-        'user_id' => $name = $faker->numberBetween(1,5),
-        'message' => $name = $faker->sentence,
-    ];
-});
+class MessageFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Message::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'user_id' =>  $this->faker->numberBetween(1, 5),
+            'message' =>  $this->faker->sentence,
+        ];
+    }
+}

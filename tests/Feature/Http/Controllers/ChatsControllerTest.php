@@ -13,7 +13,7 @@ class ChatsControllerTest extends TestCase
     /** @test */
     public function testIndexWithAuth()
     {
-        $user = factory(\App\User::class)->create();
+        $user = \App\Models\User::factory()->create();
 
         $response = $this->actingAs($user)
             ->get(route('chats.index'));
@@ -35,15 +35,15 @@ class ChatsControllerTest extends TestCase
     /** @test */
     public function testFetchMessages()
     {
-        $users = factory(\App\User::class, 3)
+        $users = \App\Models\User::factory()->count(3)
             ->create()
             ->each(function ($user) {
-                $user->messages()->save(factory(\App\Message::class)->make());
+                $user->messages()->save(\App\Models\Message::factory()->make());
             });
 
-        $messages = Message::with('user')->get();
+        $messages = \App\Models\Message::with('user')->get();
 
-        $response = $this->actingAs(\App\User::first())
+        $response = $this->actingAs(\App\Models\User::first())
             ->get(route('chats.fetch'));
 
         $response->assertStatus(200);
@@ -55,7 +55,7 @@ class ChatsControllerTest extends TestCase
     /** @test */
     public function testSendMessage()
     {
-        $user = factory(\App\User::class)->create();
+        $user = \App\Models\User::factory()->create();
 
         $response = $this->actingAs($user)
             ->get(route('chats.send'));

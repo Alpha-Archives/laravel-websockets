@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class MesagesSeeder extends Seeder
@@ -11,8 +13,6 @@ class MesagesSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 2)->create()->each(function ($u) {
-            $u->messages()->insert(factory(App\Message::class,3)->make()->toArray());
-        });
+        //
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Auth;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -34,7 +34,7 @@ class ResetsPasswordTest extends TestCase
     public function testSendsPasswordResetEmail()
     {
         $this->markTestIncomplete();
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $this->expectsNotification($user, ResetPassword::class);
 
@@ -74,7 +74,7 @@ class ResetsPasswordTest extends TestCase
      */
     public function testChangesAUsersPassword()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $token = Password::createToken($user);
 

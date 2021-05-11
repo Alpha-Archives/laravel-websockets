@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Auth;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -31,7 +31,7 @@ class LoginTest extends TestCase
     public function testLoginAValidUser()
     {
         $this->markTestIncomplete();
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->post('/login', [
             'email' => $user->email,
@@ -50,7 +50,7 @@ class LoginTest extends TestCase
      */
     public function testDoesNotLoginAnInvalidUser()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->post('/login', [
             'email' => $user->email,
@@ -70,7 +70,7 @@ class LoginTest extends TestCase
     public function testLogoutAnAuthenticatedUser()
     {
         $this->markTestIncomplete();
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->actingAs($user)->post('/logout');
 
