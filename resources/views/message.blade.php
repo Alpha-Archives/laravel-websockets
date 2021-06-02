@@ -12,22 +12,23 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
-    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
-    <link rel="stylesheet prefetch"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" />
+
+    {{-- <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" /> --}}
+    {{-- <link rel="stylesheet prefetch" --}}
+        {{-- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" /> --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+    {{-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> --}}
+    {{-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" /> --}}
 </head>
 
 <body>
-    <div id="frame">
+     <div id="frame">
         <div id="sidepanel">
             <div id="contacts">
                 <ul>
@@ -53,6 +54,7 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/app.js') }}" ></script>
     <script>
         // $(window).load(function() {
           $('.messages').animate({ scrollTop: $(document).height() }, 'fast');
