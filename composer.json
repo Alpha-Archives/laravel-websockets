@@ -11,7 +11,7 @@
         "php": "^7.3|^8.0",
         "beyondcode/laravel-websockets": "2.0.0-beta.37",
         "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
+        "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.3",
         "jeroennoten/laravel-adminlte": "^3.6",
         "laravel/framework": "^9.0",
